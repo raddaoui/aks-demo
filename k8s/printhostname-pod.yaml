@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: printhostname
+spec:
+  nodeSelector:
+    "kubernetes.io/os": linux
+  containers:
+  - name: debug
+    image: docker.io/raddaoui/printhostname:v1
+    ports:
+    - name: http
+      containerPort: 80
